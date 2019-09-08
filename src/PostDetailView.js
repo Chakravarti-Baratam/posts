@@ -64,20 +64,24 @@ class PostDetailView extends React.Component {
                 <div>User Name: {post.username}</div>
                 <div>Comments:  
                     <table>
-                        <tr>
-                            <th>Subject</th>
-                            <th>Comment</th>
-                            <th>Email</th>
-                        </tr>                                
-                    {post && post.comments && post.comments.map(comment => (
-                        <CommentView 
-                            key={comment.id} 
-                            id={comment.id} 
-                            subject={comment.subject} 
-                            body={comment.body} 
-                            email={comment.email}>
-                        </CommentView>                    
-                    ))}  
+                        <thead> 
+                            <tr>
+                                <th>Subject</th>
+                                <th>Comment</th>
+                                <th>Email</th>
+                            </tr>   
+                        </thead>  
+                        <tbody>                          
+                        {post && post.comments && post.comments.map(comment => (
+                            <CommentView 
+                                key={comment.id} 
+                                id={comment.id} 
+                                subject={comment.subject} 
+                                body={comment.body} 
+                                email={comment.email}>
+                            </CommentView>                    
+                        ))}  
+                    </tbody>  
                     </table>                     
                 </div>
             </div>;

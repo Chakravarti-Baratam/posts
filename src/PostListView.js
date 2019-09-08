@@ -3,9 +3,11 @@ import PostView from './PostView';
     
 function PostListView(props) {           
     return <table>
-        <thead>                    
-            <th>Title</th>
-            <th>User Name</th>
+        <thead> 
+            <tr>                   
+                <th>Title</th>
+                <th>User Name</th>
+            </tr>
         </thead>
         <tbody>
         {props.posts && props.posts.map(post => (
